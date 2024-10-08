@@ -23,7 +23,7 @@ This repository contains the implementation of my master's thesis project, which
 - `training_and_testing/`: Scripts for training and testing quantum gates including Pauli-X, Hadamard, and CNOT gates.
 - `plotting/`: Scripts for visualizing performance and robustness.
 
-### Prerequisites
+## Prerequisites
 - Python 3.x
 - `numpy`
 - `scipy`
@@ -32,3 +32,7 @@ This repository contains the implementation of my master's thesis project, which
 - `tensorflow` (for implementing PPO and GAE)
 - `tensorflow_probability`
 
+## Reference
+- [Robust Quantum Gates by Deep Reinforcement Learning (my master thesis)](https://tdr.lib.ntu.edu.tw/handle/123456789/92226)
+- [Proximal Policy Optimization (PPO)](https://arxiv.org/pdf/1707.06347)
+- [Generalized Advantage Estimation (GAE)](https://arxiv.org/pdf/1506.02438)
