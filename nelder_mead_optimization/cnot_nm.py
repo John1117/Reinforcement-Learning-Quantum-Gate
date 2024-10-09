@@ -83,15 +83,15 @@ inf_ls = []
 infss = np.zeros((num_trials, stddevs.shape[0]))
 ordss = np.zeros((num_trials, mid_stddevs.shape[0]))
 
-#plt.ion()
-#fig, ax = plt.subplots(1, 2, num=f'T={max_gate_time}, N={num_steps}', figsize=(15, 7.5), tight_layout=True)
-#fig.show()
+# plt.ion()
+# fig, ax = plt.subplots(1, 2, num=f'T={max_gate_time}, N={num_steps}', figsize=(15, 7.5), tight_layout=True)
+# fig.show()
 
 bounds = np.concatenate(
     (
         np.repeat([[-max_X1_amp, max_X1_amp]], num_steps, axis=0),
         np.repeat([[-max_X2_amp, max_X2_amp]], num_steps, axis=0),
-        #np.repeat([[0, max_J_amp]], num_steps, axis=0)
+        # np.repeat([[0, max_J_amp]], num_steps, axis=0)
     ),
     axis=0
 )
@@ -100,7 +100,7 @@ for i in range(num_trials):
         (
             np.random.uniform(low=-max_X1_amp, high=max_X1_amp, size=num_steps),
             np.random.uniform(low=-max_X2_amp, high=max_X2_amp, size=num_steps),
-            #np.random.uniform(low=0, high=max_J_amp, size=num_steps)
+            # np.random.uniform(low=0, high=max_J_amp, size=num_steps)
         )
     )
     res = minimize(
@@ -118,25 +118,25 @@ for i in range(num_trials):
     infss[i] = infs
     ordss[i] = ords
 
-    """ax[0].clear()
-    ax[0].plot(stddevs, infss.T)
-    ax[0].plot(stddevs, np.prod(infss[0:i+1], axis=0) ** (1/(i+1)), c='k', lw=5)
-    ax[0].grid(True)
-    ax[0].set_xlabel('noise std', fontsize=20)
-    ax[0].set_ylabel('avg inf', fontsize=20)
-    ax[0].tick_params(axis='both', labelsize=20)
-    ax[0].set_xscale('log')
-    ax[0].set_yscale('log')
+    # ax[0].clear()
+    # ax[0].plot(stddevs, infss.T)
+    # ax[0].plot(stddevs, np.prod(infss[0:i+1], axis=0) ** (1/(i+1)), c='k', lw=5)
+    # ax[0].grid(True)
+    # ax[0].set_xlabel('noise std', fontsize=20)
+    # ax[0].set_ylabel('avg inf', fontsize=20)
+    # ax[0].tick_params(axis='both', labelsize=20)
+    # ax[0].set_xscale('log')
+    # ax[0].set_yscale('log')
 
-    ax[1].clear()
-    ax[1].plot(mid_stddevs, ordss.T)
-    ax[1].plot(mid_stddevs, np.mean(ordss[0:i+1], axis=0), c='k', lw=5)
-    ax[1].grid(True)
-    ax[1].set_xlabel('noise std', fontsize=20)
-    ax[1].set_ylabel('noise ord', fontsize=20)
-    ax[1].tick_params(axis='both', labelsize=20)
-    ax[1].set_xscale('log')
-    fig.canvas.flush_events()"""
+    # ax[1].clear()
+    # ax[1].plot(mid_stddevs, ordss.T)
+    # ax[1].plot(mid_stddevs, np.mean(ordss[0:i+1], axis=0), c='k', lw=5)
+    # ax[1].grid(True)
+    # ax[1].set_xlabel('noise std', fontsize=20)
+    # ax[1].set_ylabel('noise ord', fontsize=20)
+    # ax[1].tick_params(axis='both', labelsize=20)
+    # ax[1].set_xscale('log')
+    # fig.canvas.flush_events()
 
     print('---------------------------------------')
     print(i+1)
@@ -151,6 +151,6 @@ for i in range(num_trials):
 print('---------------------------------------')
 print('avg inf:', np.prod(inf_ls) ** (1/len(inf_ls)))
 print('success rate:', success_counts / num_trials) #np.round(success_counts / num_trials * 100, 1), '%')
-#plt.ioff()
-#plt.show()
+# plt.ioff()
+# plt.show()
 

@@ -50,7 +50,7 @@ board_update_interval = 100
 
 main_path = '/Users/...'
 model_name = 'model_name'
-path_name = main_path + '/' + model_name
+path_name = None # main_path + '/' + model_name
 
 
 tf.keras.backend.set_floatx('float64')
@@ -75,8 +75,8 @@ with tf.device('/cpu'):
         init_action_stddev=init_action_stddev,
         train_stddev=train_stddev
     )
-    old_main_path = '/Users/...'
-    agent = load_network(agent, old_main_path + '/old_model_name', use_stddev_proj_network=False)
+    # old_main_path = '/Users/...'
+    # agent = load_network(agent, old_main_path + '/old_model_name', use_stddev_proj_network=False)
 
     train_agent(
         env=env,
