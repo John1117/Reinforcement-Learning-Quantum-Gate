@@ -6,11 +6,20 @@ Since TensorFlow [`tf_agents.agents.PPOAgent`](https://www.tensorflow.org/agents
 
 ## Table of Content
 - [Introduction](#robust-quantum-gates-by-deep-reinforcement-learning)
+- [Project Structure](#project-structure)
 - [Getting Start](#getting-start)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Usage](#usage)
 - [References](#references)
+
+## Project Structure
+- `pack/agent.py`: PPO algorithm.
+- `pack/network.py`: Deep neural networks.
+- `pack/env.py`: Single-qubit gate RL environment.
+- `pack/env2.py`: Two-qubit gate RL environment.
+- `reinforcement_learning/`: The folder containing RL training.
+- `nelder_mead_optimizaiton/`: The folder containing Nelder-Mead quantum gate optimization.
 
 ## Getting Start
 
